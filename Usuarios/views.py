@@ -42,12 +42,12 @@ class SendEmail(APIView):
             """emailEmpresa = 'administracion@javieremartinez.co'
             mail2 = f'Correo de {name} {Apellido}'
             body = render_to_string('emailJavier.html',{
-                'user':name,
-                'email':email,
+                'User':name,
+                'Email':email,
                 'Apellido':Apellido,
                 'Telefono':Telefono,
                 'Mensaje':Mensaje,
-                'domain':page,
+                'Domain':page,
             })
             
             send_mail2 = EmailMessage(
