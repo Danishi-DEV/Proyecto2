@@ -55,7 +55,7 @@ class SendEmail(APIView):
                 mail2,body,settings.EMAIL_HOST_USER,to=[emailEmpresa]
             )
             send_mail2.content_subtype = 'html'
-            send_mail2.from_email = False
+            # send_mail2.from_email = False
             send_mail2.send()
             
             return Response({'message': 'Correo enviado exitosamente'}, status=status.HTTP_200_OK)
