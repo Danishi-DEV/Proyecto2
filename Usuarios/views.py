@@ -39,9 +39,9 @@ class SendEmail(APIView):
             send_mail.send()
             
             #correo para el tio
-            """emailEmpresa = ''
+            """emailEmpresa = 'administracion@javieremartinez.co'
             mail2 = f'Correo de {name} {Apellido}'
-            body = render_to_string('emails/emailTemplate2.html',{
+            body = render_to_string('emailJavier.html',{
                 'user':name,
                 'email':email,
                 'Apellido':Apellido,
