@@ -22,7 +22,9 @@ class SendEmail(APIView):
             nombres = serializer.validated_data['first_name']
             apellidos = serializer.validated_data['last_name']
             email = serializer.validated_data['email']
-
+            telefono = serializer.validated_data['telefono']
+            mensaje = serializer.validated_data['mensaje']
+            
             
             page = get_current_site(request)
             mail = 'Confirmación de contacto - Javier Martinez'
@@ -39,14 +41,13 @@ class SendEmail(APIView):
             send_mail.send()
             
             #correo para el tio
-            """emailEmpresa = 'juansup123@gmail.com'
-            mail2 = f'Correo de {name} {Apellido}'
+            emailEmpresa = 'juansup123@gmail.com'
+            mail2 = f'Correo de {nombres} {apellidos}'
             body = render_to_string('emailJavier.html',{
-                'User':name,
+                'User':f'{nombres} {apellidos}',
                 'Email':email,
-                'Apellido':Apellido,
-                'Telefono':Telefono,
-                'Mensaje':Mensaje,
+                'Telefono':telefono,
+                'Mensaje':mensaje,
                 'Domain':page,
             })
             
@@ -55,7 +56,7 @@ class SendEmail(APIView):
             )
             send_mail2.content_subtype = 'html'
             send_mail2.from_email = False
-            send_mail2.send()"""
+            send_mail2.send()
             
             return Response({'message': 'Correo enviado exitosamente'}, status=status.HTTP_200_OK)
         
