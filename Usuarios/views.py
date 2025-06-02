@@ -39,7 +39,7 @@ class SendEmail(APIView):
             send_mail.send()
             
             #correo para el tio
-            """emailEmpresa = 'administracion@javieremartinez.co'
+            """emailEmpresa = 'juansup123@gmail.com'
             mail2 = f'Correo de {name} {Apellido}'
             body = render_to_string('emailJavier.html',{
                 'User':name,
