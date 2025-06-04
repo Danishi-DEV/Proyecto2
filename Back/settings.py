@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'Productos',
     'Usuarios',
-    'Categorias'
+    'Categorias',
+    'whitenoise'
 ]
 
 MIDDLEWARE = [
